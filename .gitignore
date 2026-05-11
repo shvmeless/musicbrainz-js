@@ -1,0 +1,34 @@
+# LOGS
+*.log
+logs
+
+# DEPENDENCIES
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# ENVIRONMENT
+*.env
+
+# TEMP
+temporary/
+temp/
+tmp/
+tmp.ts
+*.tmp.ts
+tmp.md
+*.tmp.md
+
+# PACKAGES
+*.tgz
+
+# DEV
+coverage/
+html/
+
+# PRODUCTION
+output/
+build/
+dist/
+out/

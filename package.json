@@ -1,0 +1,35 @@
+{
+  "name": "@shvmeless/musicbrainz",
+  "description": "A MusicBrainz API client for reading data.",
+  "version": "0.0.1",
+  "license": "MIT",
+  "private": true,
+  "type": "commonjs",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "default": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "author": {
+    "name": "Luciano Aedo Puga",
+    "url": "https://github.com/shvmeless"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shvmeless/musicbrainz-js.git"
+  },
+  "scripts": {
+    "build": "tsc && tsc-alias"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.18",
+    "tsc-alias": "^1.8.17",
+    "typescript": "^5.9.3"
+  }
+}
