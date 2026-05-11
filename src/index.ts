@@ -1,1 +1,2 @@
-console.log('MusicBrainz API Client!')
+// TYPES
+export type { Entity } from '@interfaces/common'

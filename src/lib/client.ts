@@ -1,0 +1,21 @@
+// IMPORTS
+import axios from 'axios'
+import type { Entity } from '@interfaces/common'
+import { Throttler } from '@lib/throttler'
+
+// CLASS
+export class ApiClient {
+
+  // PROPERTIES
+  public static readonly BASE_URL: string = 'https://musicbrainz.org/ws/2'
+
+  // METHOD
+  public static async search(entity: Entity, query: string, limit: number = 25, offset: number = 0): Promise<unknown> {
+    const URL = `${this.BASE_URL}/${entity}`
+    return await Throttler.throttle(async () => {
+      const response = await axios.get(URL, { params: { query, limit, offset, fmt: 'json' } })
+      return response.data as unknown
+    })
+  }
+
+}
