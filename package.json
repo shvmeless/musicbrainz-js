@@ -25,11 +25,18 @@
     "url": "git+https://github.com/shvmeless/musicbrainz-js.git"
   },
   "scripts": {
+    "lint": "eslint ./src",
+    "lint:fix": "eslint --fix ./src",
     "build": "tsc && tsc-alias"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@stylistic/eslint-plugin": "^5.10.0",
     "@types/node": "^22.19.18",
+    "eslint": "^10.3.0",
+    "globals": "^17.6.0",
     "tsc-alias": "^1.8.17",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.59.2"
   }
 }

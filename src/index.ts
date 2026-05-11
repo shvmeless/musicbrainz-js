@@ -1,1 +1,1 @@
-console.log("MusicBrainz API Client!");
+console.log('MusicBrainz API Client!')
