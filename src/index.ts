@@ -1,5 +1,14 @@
 // TYPES
-export type { Entity } from '@interfaces/common'
+export type { AliasType, ArtistType, ArtistGender, AreaType, Status, PrimaryType, SecondaryType } from '@interfaces/enums'
+export type { Entity, LifeSpan, Area, Alias, Tag, TextRepresentation, Label, LabelInfo } from '@interfaces/common'
+export type { ArtistSlim, ReleaseGroupSlim, ReleaseSlim, ArtistCredit, ReleaseEvent, ReleaseMedia, Track, RecordingReleaseMedia, RecordingReleaseGroup, RecordingRelease, WorkRelation, WorkRecording } from '@interfaces/secondary'
+export type { Artist, ReleaseGroup, Release, Recording, Work } from '@interfaces/entities'
+
+// SCHEMAS
+export { AliasTypeSchema, ArtistTypeSchema, ArtistGenderSchema, AreaTypeSchema, StatusSchema, PrimaryTypeSchema, SecondaryTypeSchema } from '@schemas/enums'
+export { LifeSpanSchema, AreaSchema, AliasSchema, TagSchema, TextRepresentationSchema, LabelSchema, LabelInfoSchema } from '@schemas/common'
+export { ArtistSlimSchema, ReleaseGroupSlimSchema, ReleaseSlimSchema, ArtistCreditSchema, ReleaseEventSchema, ReleaseMediaSchema, TrackSchema, RecordingReleaseMediaSchema, RecordingReleaseGroupSchema, RecordingReleaseSchema, WorkRelationSchema, WorkRecordingSchema } from '@schemas/secondary'
+export { ArtistSchema, ReleaseGroupSchema, ReleaseSchema, RecordingSchema, WorkSchema } from '@schemas/entities'
 
 // RAW-SEARCH
 export { type RawArtistSearch, searchRawArtist } from '@requests/artist/raw-search'
