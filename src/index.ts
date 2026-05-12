@@ -48,3 +48,4 @@ export { lookupWork } from '@requests/work/basic-lookup'
 // BROWSE
 export { type ArtistBrowse, browseArtist } from '@requests/artist/basic-browse'
 export { type ReleaseGroupBrowse, browseReleaseGroup } from '@requests/release-group/basic-browse'
+export { type ReleaseBrowse, browseRelease } from '@requests/release/basic-browse'
