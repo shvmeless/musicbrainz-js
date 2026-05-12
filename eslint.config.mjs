@@ -27,6 +27,7 @@ export default defineConfig ([
       // STYLISTIC
       '@stylistic/padded-blocks': 'off',
       '@stylistic/arrow-parens': ['error', 'always'],
+      '@stylistic/function-call-spacing': ['error', 'never'],
       '@stylistic/brace-style': ['error', '1tbs', {
         allowSingleLine: true
       }],
@@ -42,7 +43,7 @@ export default defineConfig ([
       }],
 
       // TYPESCRIPT
-      "@typescript-eslint/consistent-type-imports": "error",
+      '@typescript-eslint/consistent-type-imports': 'error',
       '@typescript-eslint/array-type': ['error', {
         default: 'generic',
         readonly: 'generic'
