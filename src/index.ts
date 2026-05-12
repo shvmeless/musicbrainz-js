@@ -1,5 +1,7 @@
 // TYPES
-export type { Entity } from '@interfaces/common'
+export type { Entity, LifeSpan, Area, Alias, Tag } from '@interfaces/common'
+export type { AliasType, ArtistType, ArtistGender, AreaType } from '@interfaces/enums'
+export type { Artist } from '@interfaces/entities'
 
 // RAW-SEARCH
 export { type RawArtistSearch, searchRawArtist } from '@requests/artist/raw-search'
