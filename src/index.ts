@@ -34,3 +34,4 @@ export { type RawWorkBrowse, browseRawWork } from '@requests/work/raw-browse'
 // SEARCH
 export { type ArtistSearch, searchArtist } from '@requests/artist/basic-search'
 export { type ReleaseGroupSearch, searchReleaseGroup } from '@requests/release-group/basic-search'
+export { type ReleaseSearch, searchRelease } from '@requests/release/basic-search'
