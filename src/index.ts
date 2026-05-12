@@ -41,3 +41,4 @@ export { type WorkSearch, searchWork } from '@requests/work/basic-search'
 // LOOKUP
 export { lookupArtist } from '@requests/artist/basic-lookup'
 export { lookupReleaseGroup } from '@requests/release-group/basic-lookup'
+export { lookupRelease } from '@requests/release/basic-lookup'
