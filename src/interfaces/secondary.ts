@@ -100,3 +100,19 @@ export interface RecordingRelease {
   'artist-credit'?: Array<ArtistCredit>
   'disambiguation'?: string
 }
+
+// INTERFACE
+export interface WorkRecording {
+  'id': string
+  'title': string
+  'video': boolean | null
+}
+
+// INTERFACE
+export interface WorkRelation {
+  'type': string
+  'type-id': string
+  'direction': string
+  'artist'?: ArtistSlim
+  'recording'?: WorkRecording
+}
