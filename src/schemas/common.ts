@@ -7,16 +7,16 @@ import { AliasTypeSchema, AreaTypeSchema } from '@schemas/enums'
 
 // INTERFACE
 export const LifeSpanSchema = schemas.object<LifeSpan>({
-  'begin': schemas.string().optional(),
-  'ended': schemas.boolean().nullable(),
-  'end': schemas.string().optional(),
+  'begin': schemas.string().nullable().optional(),
+  'ended': schemas.boolean().nullable().optional(),
+  'end': schemas.string().nullable().optional(),
 }).strip()
 
 // INTERFACE
 export const AreaSchema = schemas.object<Area>({
   'id': schemas.string(),
-  'type': AreaTypeSchema.optional(),
-  'type-id': schemas.string().optional(),
+  'type': AreaTypeSchema.nullable().optional(),
+  'type-id': schemas.string().nullable().optional(),
   'name': schemas.string(),
   'sort-name': schemas.string(),
   'life-span': LifeSpanSchema,
@@ -25,13 +25,13 @@ export const AreaSchema = schemas.object<Area>({
 // INTERFACE
 export const AliasSchema = schemas.object<Alias>({
   'sort-name': schemas.string(),
-  'type-id': schemas.string().optional(),
+  'type-id': schemas.string().nullable().optional(),
   'name': schemas.string(),
-  'locale': schemas.string().nullable(),
-  'type': AliasTypeSchema.nullable(),
-  'primary': schemas.boolean().nullable(),
-  'begin-date': schemas.string().nullable(),
-  'end-date': schemas.string().nullable(),
+  'locale': schemas.string().nullable().optional(),
+  'type': AliasTypeSchema.nullable().optional(),
+  'primary': schemas.boolean().nullable().optional(),
+  'begin-date': schemas.string().nullable().optional(),
+  'end-date': schemas.string().nullable().optional(),
 }).strip()
 
 // INTERFACE
@@ -42,18 +42,18 @@ export const TagSchema = schemas.object<Tag>({
 
 // INTERFACE
 export const TextRepresentationSchema = schemas.object<TextRepresentation>({
-  'language': schemas.string().optional(),
-  'script': schemas.string().optional(),
+  'language': schemas.string().nullable().optional(),
+  'script': schemas.string().nullable().optional(),
 }).strip()
 
 // INTERFACE
-export const LabelSchema = schemas.object<Label> ({
+export const LabelSchema = schemas.object<Label>({
   'id': schemas.string(),
   'name': schemas.string(),
 }).strip()
 
 // INTERFACE
-export const LabelInfoSchema = schemas.object<LabelInfo> ({
-  'label': LabelSchema.optional(),
-  'catalog-number': schemas.string().optional(),
+export const LabelInfoSchema = schemas.object<LabelInfo>({
+  'label': LabelSchema.nullable().optional(),
+  'catalog-number': schemas.string().nullable().optional(),
 }).strip()

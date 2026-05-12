@@ -8,16 +8,16 @@ export type Entity = 'artist' | 'release-group' | 'release' | 'recording' | 'wor
 
 // INTERFACE
 export interface LifeSpan {
-  'begin'?: string
-  'ended': boolean | null
-  'end'?: string
+  'begin'?: string | null
+  'ended'?: boolean | null
+  'end'?: string | null
 }
 
 // INTERFACE
 export interface Area {
   'id': string
-  'type'?: AreaType
-  'type-id'?: string
+  'type'?: AreaType | null
+  'type-id'?: string | null
   'name': string
   'sort-name': string
   'life-span': LifeSpan
@@ -26,13 +26,13 @@ export interface Area {
 // INTERFACE
 export interface Alias {
   'sort-name': string
-  'type-id'?: string
+  'type-id'?: string | null
   'name': string
-  'locale': null | string
-  'type': AliasType | null
-  'primary': boolean | null
-  'begin-date': null | string
-  'end-date': null | string
+  'locale'?: string | null
+  'type'?: AliasType | null
+  'primary'?: boolean | null
+  'begin-date'?: string | null
+  'end-date'?: string | null
 }
 
 // INTERFACE
@@ -43,8 +43,8 @@ export interface Tag {
 
 // INTERFACE
 export interface TextRepresentation {
-  'language'?: string
-  'script'?: string
+  'language'?: string | null
+  'script'?: string | null
 }
 
 // INTERFACE
@@ -55,6 +55,6 @@ export interface Label {
 
 // INTERFACE
 export interface LabelInfo {
-  'label'?: Label
-  'catalog-number'?: string
+  'label'?: Label | null
+  'catalog-number'?: string | null
 }

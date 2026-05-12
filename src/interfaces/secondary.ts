@@ -9,32 +9,32 @@ export interface ArtistSlim {
   'id': string
   'name': string
   'sort-name': string
-  'aliases'?: Array<Alias>
-  'disambiguation'?: string
+  'aliases'?: Array<Alias> | null
+  'disambiguation'?: string | null
 }
 
 // INTERFACE
 export interface ReleaseGroupSlim {
   'id': string
-  'type-id'?: string
-  'primary-type-id'?: string
+  'type-id'?: string | null
+  'primary-type-id'?: string | null
   'title': string
-  'primary-type'?: PrimaryType
-  'secondary-types'?: Array<SecondaryType>
-  'secondary-type-ids'?: Array<string>
+  'primary-type'?: PrimaryType | null
+  'secondary-types'?: Array<SecondaryType> | null
+  'secondary-type-ids'?: Array<string> | null
 }
 
 // INTERFACE
 export interface ReleaseSlim {
   'id': string
-  'status-id'?: string
+  'status-id'?: string | null
   'title': string
-  'status'?: Status
+  'status'?: Status | null
 }
 
 // INTERFACE
 export interface ArtistCredit {
-  'joinphrase'?: string
+  'joinphrase'?: string | null
   'name': string
   'artist': ArtistSlim
 }
@@ -48,7 +48,7 @@ export interface ReleaseEvent {
 // INTERFACE
 export interface ReleaseMedia {
   'id': string
-  'format'?: string
+  'format'?: string | null
   'disc-count': number
   'track-count': number
 }
@@ -58,14 +58,14 @@ export interface Track {
   'id': string
   'number': string
   'title': string
-  'length'?: number
+  'length'?: number | null
 }
 
 // INTERFACE
 export interface RecordingReleaseMedia {
   'id': string
   'position': number
-  'format'?: string
+  'format'?: string | null
   'track': Array<Track>
   'track-count': number
   'track-offset': number
@@ -74,38 +74,38 @@ export interface RecordingReleaseMedia {
 // INTERFACE
 export interface RecordingReleaseGroup {
   'id': string
-  'type-id'?: string
-  'primary-type-id'?: string
+  'type-id'?: string | null
+  'primary-type-id'?: string | null
   'title': string
-  'primary-type'?: PrimaryType
-  'secondary-types'?: Array<SecondaryType>
-  'secondary-type-ids'?: Array<string>
-  'disambiguation'?: string
+  'primary-type'?: PrimaryType | null
+  'secondary-types'?: Array<SecondaryType> | null
+  'secondary-type-ids'?: Array<string> | null
+  'disambiguation'?: string | null
 }
 
 // INTERFACE
 export interface RecordingRelease {
   'id': string
-  'status-id'?: string
+  'status-id'?: string | null
   'count': number
   'title': string
-  'status'?: Status
+  'status'?: Status | null
   'release-group': RecordingReleaseGroup
-  'date'?: string
-  'country'?: string
-  'release-events'?: Array<ReleaseEvent>
+  'date'?: string | null
+  'country'?: string | null
+  'release-events'?: Array<ReleaseEvent> | null
   'track-count': number
   'media': Array<RecordingReleaseMedia>
-  'artist-credit-id'?: string
-  'artist-credit'?: Array<ArtistCredit>
-  'disambiguation'?: string
+  'artist-credit-id'?: string | null
+  'artist-credit'?: Array<ArtistCredit> | null
+  'disambiguation'?: string | null
 }
 
 // INTERFACE
 export interface WorkRecording {
   'id': string
   'title': string
-  'video': boolean | null
+  'video'?: boolean | null
 }
 
 // INTERFACE
@@ -113,6 +113,6 @@ export interface WorkRelation {
   'type': string
   'type-id': string
   'direction': string
-  'artist'?: ArtistSlim
-  'recording'?: WorkRecording
+  'artist'?: ArtistSlim | null
+  'recording'?: WorkRecording | null
 }

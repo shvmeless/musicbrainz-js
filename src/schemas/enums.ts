@@ -53,7 +53,7 @@ export const StatusSchema = schemas.enum<Status>(
 )
 
 // ENUM
-export const PrimaryTypeSchema = schemas.enum<PrimaryType> (
+export const PrimaryTypeSchema = schemas.enum<PrimaryType>(
   PrimaryType.Album,
   PrimaryType.Single,
   PrimaryType.Ep,
@@ -62,7 +62,7 @@ export const PrimaryTypeSchema = schemas.enum<PrimaryType> (
 )
 
 // ENUM
-export const SecondaryTypeSchema = schemas.enum<SecondaryType> (
+export const SecondaryTypeSchema = schemas.enum<SecondaryType>(
   SecondaryType.Compilation,
   SecondaryType.Soundtrack,
   SecondaryType.Spokenword,
