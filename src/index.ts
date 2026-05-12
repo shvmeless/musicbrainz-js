@@ -14,3 +14,10 @@ export { lookupRawReleaseGroup } from '@requests/release-group/raw-lookup'
 export { lookupRawRelease } from '@requests/release/raw-lookup'
 export { lookupRawRecording } from '@requests/recording/raw-lookup'
 export { lookupRawWork } from '@requests/work/raw-lookup'
+
+// RAW-BROWSE
+export { type RawArtistBrowse, browseRawArtist } from '@requests/artist/raw-browse'
+export { type RawReleaseGroupBrowse, browseRawReleaseGroup } from '@requests/release-group/raw-browse'
+export { type RawReleaseBrowse, browseRawRelease } from '@requests/release/raw-browse'
+export { type RawRecordingBrowse, browseRawRecording } from '@requests/recording/raw-browse'
+export { type RawWorkBrowse, browseRawWork } from '@requests/work/raw-browse'
