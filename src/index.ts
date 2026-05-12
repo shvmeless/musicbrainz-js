@@ -30,3 +30,6 @@ export { type RawReleaseGroupBrowse, browseRawReleaseGroup } from '@requests/rel
 export { type RawReleaseBrowse, browseRawRelease } from '@requests/release/raw-browse'
 export { type RawRecordingBrowse, browseRawRecording } from '@requests/recording/raw-browse'
 export { type RawWorkBrowse, browseRawWork } from '@requests/work/raw-browse'
+
+// SEARCH
+export { type ArtistSearch, searchArtist } from '@requests/artist/basic-search'
