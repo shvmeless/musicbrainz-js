@@ -40,3 +40,21 @@ export interface Tag {
   'count': number
   'name': string
 }
+
+// INTERFACE
+export interface TextRepresentation {
+  'language'?: string
+  'script'?: string
+}
+
+// INTERFACE
+export interface Label {
+  'id': string
+  'name': string
+}
+
+// INTERFACE
+export interface LabelInfo {
+  'label'?: Label
+  'catalog-number'?: string
+}

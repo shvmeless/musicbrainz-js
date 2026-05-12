@@ -1,9 +1,9 @@
 /* eslint @stylistic/quote-props: ["error", "always"] */
 
 // IMPORTS
-import type { ArtistGender, ArtistType, PrimaryType, SecondaryType } from '@interfaces/enums'
-import type { Alias, Area, LifeSpan, Tag } from '@interfaces/common'
-import type { ArtistCredit, ReleaseSlim } from '@interfaces/secondary'
+import type { ArtistGender, ArtistType, PrimaryType, SecondaryType, Status } from '@interfaces/enums'
+import type { Alias, Area, LabelInfo, LifeSpan, Tag, TextRepresentation } from '@interfaces/common'
+import type { ArtistCredit, ReleaseMedia, ReleaseEvent, ReleaseGroupSlim, ReleaseSlim } from '@interfaces/secondary'
 
 // INTERFACE
 export interface Artist {
@@ -43,4 +43,30 @@ export interface ReleaseGroup {
   'tags'?: Array<Tag>
   'secondary-types'?: Array<SecondaryType>
   'secondary-type-ids'?: Array<string>
+}
+
+// INTERFACE
+export interface Release {
+  'id': string
+  'score': number
+  'status-id'?: string
+  'packaging-id'?: string
+  'artist-credit-id': string
+  'count'?: number
+  'title': string
+  'status'?: Status
+  'packaging'?: string
+  'text-representation'?: TextRepresentation
+  'artist-credit': Array<ArtistCredit>
+  'release-group': ReleaseGroupSlim
+  'date'?: string
+  'country'?: string
+  'release-events'?: Array<ReleaseEvent>
+  'barcode'?: string
+  'label-info'?: Array<LabelInfo>
+  'track-count'?: number
+  'media'?: Array<ReleaseMedia>
+  'disambiguation'?: string
+  'asin'?: string
+  'tags'?: Array<Tag>
 }

@@ -1,8 +1,8 @@
 // TYPES
-export type { Entity, LifeSpan, Area, Alias, Tag } from '@interfaces/common'
-export type { ArtistSlim, ReleaseSlim, ArtistCredit } from '@interfaces/secondary'
+export type { Entity, LifeSpan, Area, Alias, Tag, TextRepresentation, Label, LabelInfo } from '@interfaces/common'
+export type { ArtistSlim, ReleaseGroupSlim, ReleaseSlim, ArtistCredit, ReleaseEvent, ReleaseMedia } from '@interfaces/secondary'
 export type { AliasType, ArtistType, ArtistGender, AreaType, Status, PrimaryType, SecondaryType } from '@interfaces/enums'
-export type { Artist, ReleaseGroup } from '@interfaces/entities'
+export type { Artist, ReleaseGroup, Release } from '@interfaces/entities'
 
 // SCHEMAS
 export { LifeSpanSchema, AreaSchema, AliasSchema, TagSchema } from '@schemas/common'
