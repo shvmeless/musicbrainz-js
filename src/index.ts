@@ -44,3 +44,10 @@ export { lookupReleaseGroup } from '@requests/release-group/basic-lookup'
 export { lookupRelease } from '@requests/release/basic-lookup'
 export { lookupRecording } from '@requests/recording/basic-lookup'
 export { lookupWork } from '@requests/work/basic-lookup'
+
+// BROWSE
+export { type ArtistBrowse, browseArtist } from '@requests/artist/basic-browse'
+export { type ReleaseGroupBrowse, browseReleaseGroup } from '@requests/release-group/basic-browse'
+export { type ReleaseBrowse, browseRelease } from '@requests/release/basic-browse'
+export { type RecordingBrowse, browseRecording } from '@requests/recording/basic-browse'
+export { type WorkBrowse, browseWork } from '@requests/work/basic-browse'
