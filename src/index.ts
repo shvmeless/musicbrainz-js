@@ -14,3 +14,6 @@ export { lookupRawReleaseGroup } from '@requests/release-group/raw-lookup'
 export { lookupRawRelease } from '@requests/release/raw-lookup'
 export { lookupRawRecording } from '@requests/recording/raw-lookup'
 export { lookupRawWork } from '@requests/work/raw-lookup'
+
+// RAW-BROWSE
+export { type RawArtistBrowse, browseRawArtist } from '@requests/artist/raw-browse'
