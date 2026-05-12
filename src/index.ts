@@ -11,3 +11,4 @@ export { type RawWorkSearch, searchRawWork } from '@requests/work/raw-search'
 // RAW-LOOKUP
 export { lookupRawArtist } from '@requests/artist/raw-lookup'
 export { lookupRawReleaseGroup } from '@requests/release-group/raw-lookup'
+export { lookupRawRelease } from '@requests/release/raw-lookup'
