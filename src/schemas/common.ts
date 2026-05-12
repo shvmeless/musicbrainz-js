@@ -3,7 +3,7 @@
 // IMPORTS
 import { schemas } from '@shvmeless/schemas'
 import type { Alias, Area, Label, LabelInfo, LifeSpan, Tag, TextRepresentation } from '@interfaces/common'
-import { AliasTypeSchema, AreaTypeSchema } from '@schemas/enums'
+import { AreaTypeSchema } from '@schemas/enums'
 
 // INTERFACE
 export const LifeSpanSchema = schemas.object<LifeSpan>({
@@ -19,7 +19,7 @@ export const AreaSchema = schemas.object<Area>({
   'type-id': schemas.string().nullable().optional(),
   'name': schemas.string(),
   'sort-name': schemas.string(),
-  'life-span': LifeSpanSchema,
+  'life-span': LifeSpanSchema.nullable().optional(),
 }).strip()
 
 // INTERFACE
@@ -28,7 +28,7 @@ export const AliasSchema = schemas.object<Alias>({
   'type-id': schemas.string().nullable().optional(),
   'name': schemas.string(),
   'locale': schemas.string().nullable().optional(),
-  'type': AliasTypeSchema.nullable().optional(),
+  'type': schemas.string().nullable().optional(),
   'primary': schemas.boolean().nullable().optional(),
   'begin-date': schemas.string().nullable().optional(),
   'end-date': schemas.string().nullable().optional(),

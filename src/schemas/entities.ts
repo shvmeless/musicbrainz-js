@@ -3,7 +3,7 @@
 // IMPORTS
 import { schemas } from '@shvmeless/schemas'
 import type { Artist, Recording, Release, ReleaseGroup, Work } from '@interfaces/entities'
-import { ArtistGenderSchema, ArtistTypeSchema, PrimaryTypeSchema, SecondaryTypeSchema, StatusSchema } from '@schemas/enums'
+import { ArtistTypeSchema, PrimaryTypeSchema, SecondaryTypeSchema, StatusSchema } from '@schemas/enums'
 import { AliasSchema, AreaSchema, LabelInfoSchema, LifeSpanSchema, TagSchema, TextRepresentationSchema } from '@schemas/common'
 import { ArtistCreditSchema, RecordingReleaseSchema, ReleaseEventSchema, ReleaseGroupSlimSchema, ReleaseMediaSchema, ReleaseSlimSchema, WorkRelationSchema } from '@schemas/secondary'
 
@@ -12,11 +12,11 @@ export const ArtistSchema = schemas.object<Artist>({
   'id': schemas.string(),
   'type': ArtistTypeSchema.nullable().optional(),
   'type-id': schemas.string().nullable().optional(),
-  'score': schemas.number(),
+  'score': schemas.number().nullable().optional(),
   'gender-id': schemas.string().nullable().optional(),
   'name': schemas.string(),
   'sort-name': schemas.string(),
-  'gender': ArtistGenderSchema.nullable().optional(),
+  'gender': schemas.string().nullable().optional(),
   'country': schemas.string().nullable().optional(),
   'area': AreaSchema.nullable().optional(),
   'begin-area': AreaSchema.nullable().optional(),
@@ -33,14 +33,14 @@ export const ArtistSchema = schemas.object<Artist>({
 export const ReleaseGroupSchema = schemas.object<ReleaseGroup>({
   'id': schemas.string(),
   'type-id': schemas.string().nullable().optional(),
-  'score': schemas.number(),
+  'score': schemas.number().nullable().optional(),
   'primary-type-id': schemas.string().nullable().optional(),
-  'artist-credit-id': schemas.string(),
-  'count': schemas.number(),
+  'artist-credit-id': schemas.string().nullable().optional(),
+  'count': schemas.number().nullable().optional(),
   'title': schemas.string(),
   'first-release-date': schemas.string().nullable().optional(),
   'primary-type': PrimaryTypeSchema.nullable().optional(),
-  'artist-credit': schemas.array(ArtistCreditSchema),
+  'artist-credit': schemas.array(ArtistCreditSchema).nullable().optional(),
   'releases': schemas.array(ReleaseSlimSchema).nullable().optional(),
   'tags': schemas.array(TagSchema).nullable().optional(),
   'secondary-types': schemas.array(SecondaryTypeSchema).nullable().optional(),
@@ -50,17 +50,17 @@ export const ReleaseGroupSchema = schemas.object<ReleaseGroup>({
 // INTERFACE
 export const ReleaseSchema = schemas.object<Release>({
   'id': schemas.string(),
-  'score': schemas.number(),
+  'score': schemas.number().nullable().optional(),
   'status-id': schemas.string().nullable().optional(),
   'packaging-id': schemas.string().nullable().optional(),
-  'artist-credit-id': schemas.string(),
+  'artist-credit-id': schemas.string().nullable().optional(),
   'count': schemas.number().nullable().optional(),
   'title': schemas.string(),
   'status': StatusSchema.nullable().optional(),
   'packaging': schemas.string().nullable().optional(),
   'text-representation': TextRepresentationSchema.nullable().optional(),
-  'artist-credit': schemas.array(ArtistCreditSchema),
-  'release-group': ReleaseGroupSlimSchema,
+  'artist-credit': schemas.array(ArtistCreditSchema).nullable().optional(),
+  'release-group': ReleaseGroupSlimSchema.nullable().optional(),
   'date': schemas.string().nullable().optional(),
   'country': schemas.string().nullable().optional(),
   'release-events': schemas.array(ReleaseEventSchema).nullable().optional(),
@@ -76,12 +76,12 @@ export const ReleaseSchema = schemas.object<Release>({
 // INTERFACE
 export const RecordingSchema = schemas.object<Recording>({
   'id': schemas.string(),
-  'score': schemas.number(),
-  'artist-credit-id': schemas.string(),
+  'score': schemas.number().nullable().optional(),
+  'artist-credit-id': schemas.string().nullable().optional(),
   'title': schemas.string(),
   'length': schemas.number().nullable().optional(),
   'video': schemas.boolean().nullable().optional(),
-  'artist-credit': schemas.array(ArtistCreditSchema),
+  'artist-credit': schemas.array(ArtistCreditSchema).nullable().optional(),
   'first-release-date': schemas.string().nullable().optional(),
   'releases': schemas.array(RecordingReleaseSchema).nullable().optional(),
   'isrcs': schemas.array(schemas.string()).nullable().optional(),
@@ -93,11 +93,11 @@ export const RecordingSchema = schemas.object<Recording>({
 export const WorkSchema = schemas.object<Work>({
   'id': schemas.string(),
   'type': schemas.string().nullable().optional(),
-  'score': schemas.number(),
+  'score': schemas.number().nullable().optional(),
   'title': schemas.string(),
   'language': schemas.string().nullable().optional(),
   'iswcs': schemas.array(schemas.string()).nullable().optional(),
-  'relations': schemas.array(WorkRelationSchema),
+  'relations': schemas.array(WorkRelationSchema).nullable().optional(),
   'languages': schemas.array(schemas.string()),
   'aliases': schemas.array(AliasSchema).nullable().optional(),
   'disambiguation': schemas.string().nullable().optional(),

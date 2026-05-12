@@ -42,7 +42,7 @@ export interface ArtistCredit {
 // INTERFACE
 export interface ReleaseEvent {
   'date': string
-  'area': ArtistSlim
+  'area'?: ArtistSlim | null
 }
 
 // INTERFACE

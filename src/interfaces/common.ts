@@ -1,7 +1,7 @@
 /* eslint @stylistic/quote-props: ["error", "always"] */
 
 // IMPORTS
-import type { AliasType, AreaType } from '@interfaces/enums'
+import type { AreaType } from '@interfaces/enums'
 
 // TYPE
 export type Entity = 'artist' | 'release-group' | 'release' | 'recording' | 'work'
@@ -20,7 +20,7 @@ export interface Area {
   'type-id'?: string | null
   'name': string
   'sort-name': string
-  'life-span': LifeSpan
+  'life-span'?: LifeSpan | null
 }
 
 // INTERFACE
@@ -29,7 +29,7 @@ export interface Alias {
   'type-id'?: string | null
   'name': string
   'locale'?: string | null
-  'type'?: AliasType | null
+  'type'?: string | null
   'primary'?: boolean | null
   'begin-date'?: string | null
   'end-date'?: string | null

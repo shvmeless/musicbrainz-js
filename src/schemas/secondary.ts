@@ -44,7 +44,7 @@ export const ArtistCreditSchema = schemas.object<ArtistCredit>({
 // INTERFACE
 export const ReleaseEventSchema = schemas.object<ReleaseEvent>({
   'date': schemas.string(),
-  'area': ArtistSlimSchema,
+  'area': ArtistSlimSchema.nullable().optional(),
 }).strip()
 
 // INTERFACE
