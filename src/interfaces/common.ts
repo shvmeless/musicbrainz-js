@@ -8,31 +8,31 @@ export type Entity = 'artist' | 'release-group' | 'release' | 'recording' | 'wor
 
 // INTERFACE
 export interface LifeSpan {
-  'begin'?: string | null
-  'ended'?: boolean | null
-  'end'?: string | null
+  'begin': string | null
+  'ended': boolean | null
+  'end': string | null
 }
 
 // INTERFACE
 export interface Area {
   'id': string
-  'type'?: AreaType | null
-  'type-id'?: string | null
+  'type': AreaType | null
+  'type-id': string | null
   'name': string
   'sort-name': string
-  'life-span'?: LifeSpan | null
+  'life-span': LifeSpan | null
 }
 
 // INTERFACE
 export interface Alias {
   'sort-name': string
-  'type-id'?: string | null
+  'type-id': string | null
   'name': string
-  'locale'?: string | null
-  'type'?: string | null
-  'primary'?: boolean | null
-  'begin-date'?: string | null
-  'end-date'?: string | null
+  'locale': string | null
+  'type': string | null
+  'primary': boolean | null
+  'begin-date': string | null
+  'end-date': string | null
 }
 
 // INTERFACE
@@ -43,8 +43,8 @@ export interface Tag {
 
 // INTERFACE
 export interface TextRepresentation {
-  'language'?: string | null
-  'script'?: string | null
+  'language': string | null
+  'script': string | null
 }
 
 // INTERFACE
@@ -55,6 +55,6 @@ export interface Label {
 
 // INTERFACE
 export interface LabelInfo {
-  'label'?: Label | null
-  'catalog-number'?: string | null
+  'label': Label | null
+  'catalog-number': string | null
 }

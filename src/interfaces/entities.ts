@@ -8,95 +8,95 @@ import type { ArtistCredit, ReleaseMedia, ReleaseEvent, ReleaseGroupSlim, Releas
 // INTERFACE
 export interface Artist {
   'id': string
-  'type'?: ArtistType | null
-  'type-id'?: string | null
-  'score'?: number | null
-  'gender-id'?: string | null
+  'type': ArtistType | null
+  'type-id': string | null
+  'score': number | null
+  'gender-id': string | null
   'name': string
   'sort-name': string
-  'gender'?: string | null
-  'country'?: string | null
-  'area'?: Area | null
-  'begin-area'?: Area | null
-  'ipis'?: Array<string> | null
-  'isnis'?: Array<string> | null
+  'gender': string | null
+  'country': string | null
+  'area': Area | null
+  'begin-area': Area | null
+  'ipis': Array<string>
+  'isnis': Array<string>
   'life-span': LifeSpan
-  'aliases'?: Array<Alias> | null
-  'tags'?: Array<Tag> | null
-  'end-area'?: Area | null
-  'disambiguation'?: string | null
+  'aliases': Array<Alias>
+  'tags': Array<Tag>
+  'end-area': Area | null
+  'disambiguation': string | null
 }
 
 // INTERFACE
 export interface ReleaseGroup {
   'id': string
-  'type-id'?: string | null
-  'score'?: number | null
-  'primary-type-id'?: string | null
-  'artist-credit-id'?: string | null
-  'count'?: number | null
+  'type-id': string | null
+  'score': number | null
+  'primary-type-id': string | null
+  'artist-credit-id': string | null
+  'count': number | null
   'title': string
-  'first-release-date'?: string | null
-  'primary-type'?: PrimaryType | null
-  'artist-credit'?: Array<ArtistCredit> | null
-  'releases'?: Array<ReleaseSlim> | null
-  'tags'?: Array<Tag> | null
-  'secondary-types'?: Array<SecondaryType> | null
-  'secondary-type-ids'?: Array<string> | null
+  'first-release-date': string | null
+  'primary-type': PrimaryType | null
+  'artist-credit': Array<ArtistCredit>
+  'releases': Array<ReleaseSlim>
+  'tags': Array<Tag>
+  'secondary-types': Array<SecondaryType>
+  'secondary-type-ids': Array<string>
 }
 
 // INTERFACE
 export interface Release {
   'id': string
-  'score'?: number | null
-  'status-id'?: string | null
-  'packaging-id'?: string | null
-  'artist-credit-id'?: string | null
-  'count'?: number | null
+  'score': number | null
+  'status-id': string | null
+  'packaging-id': string | null
+  'artist-credit-id': string | null
+  'count': number | null
   'title': string
-  'status'?: Status | null
-  'packaging'?: string | null
-  'text-representation'?: TextRepresentation | null
-  'artist-credit'?: Array<ArtistCredit> | null
-  'release-group'?: ReleaseGroupSlim | null
-  'date'?: string | null
-  'country'?: string | null
-  'release-events'?: Array<ReleaseEvent> | null
-  'barcode'?: string | null
-  'label-info'?: Array<LabelInfo> | null
-  'track-count'?: number | null
-  'media'?: Array<ReleaseMedia> | null
-  'disambiguation'?: string | null
-  'asin'?: string | null
-  'tags'?: Array<Tag> | null
+  'status': Status | null
+  'packaging': string | null
+  'text-representation': TextRepresentation | null
+  'artist-credit': Array<ArtistCredit>
+  'release-group': ReleaseGroupSlim | null
+  'date': string | null
+  'country': string | null
+  'release-events': Array<ReleaseEvent>
+  'barcode': string | null
+  'label-info': Array<LabelInfo>
+  'track-count': number | null
+  'media': Array<ReleaseMedia>
+  'disambiguation': string | null
+  'asin': string | null
+  'tags': Array<Tag>
 }
 
 // INTERFACE
 export interface Recording {
   'id': string
-  'score'?: number | null
-  'artist-credit-id'?: string | null
+  'score': number | null
+  'artist-credit-id': string | null
   'title': string
-  'length'?: number | null
-  'video'?: boolean | null
-  'artist-credit'?: Array<ArtistCredit> | null
-  'first-release-date'?: string | null
-  'releases'?: Array<RecordingRelease> | null
-  'isrcs'?: Array<string> | null
-  'tags'?: Array<Tag> | null
-  'disambiguation'?: string | null
+  'length': number | null
+  'video': boolean | null
+  'artist-credit': Array<ArtistCredit>
+  'first-release-date': string | null
+  'releases': Array<RecordingRelease>
+  'isrcs': Array<string>
+  'tags': Array<Tag>
+  'disambiguation': string | null
 }
 
 // INTERFACE
 export interface Work {
   'id': string
-  'type'?: string | null
-  'score'?: number | null
+  'type': string | null
+  'score': number | null
   'title': string
-  'language'?: string | null
-  'iswcs'?: Array<string> | null
-  'relations'?: Array<WorkRelation> | null
+  'language': string | null
+  'iswcs': Array<string>
+  'relations': Array<WorkRelation>
   'languages': Array<string>
-  'aliases'?: Array<Alias> | null
-  'disambiguation'?: string | null
+  'aliases': Array<Alias>
+  'disambiguation': string | null
 }

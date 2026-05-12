@@ -7,31 +7,31 @@ import { AreaTypeSchema } from '@schemas/enums'
 
 // INTERFACE
 export const LifeSpanSchema = schemas.object<LifeSpan>({
-  'begin': schemas.string().nullable().optional(),
-  'ended': schemas.boolean().nullable().optional(),
-  'end': schemas.string().nullable().optional(),
+  'begin': schemas.string().nullable().optional().default(null),
+  'ended': schemas.boolean().nullable().optional().default(null),
+  'end': schemas.string().nullable().optional().default(null),
 }).strip()
 
 // INTERFACE
 export const AreaSchema = schemas.object<Area>({
   'id': schemas.string(),
-  'type': AreaTypeSchema.nullable().optional(),
-  'type-id': schemas.string().nullable().optional(),
+  'type': AreaTypeSchema.nullable().optional().default(null),
+  'type-id': schemas.string().nullable().optional().default(null),
   'name': schemas.string(),
   'sort-name': schemas.string(),
-  'life-span': LifeSpanSchema.nullable().optional(),
+  'life-span': LifeSpanSchema.nullable().optional().default(null),
 }).strip()
 
 // INTERFACE
 export const AliasSchema = schemas.object<Alias>({
   'sort-name': schemas.string(),
-  'type-id': schemas.string().nullable().optional(),
+  'type-id': schemas.string().nullable().optional().default(null),
   'name': schemas.string(),
-  'locale': schemas.string().nullable().optional(),
-  'type': schemas.string().nullable().optional(),
-  'primary': schemas.boolean().nullable().optional(),
-  'begin-date': schemas.string().nullable().optional(),
-  'end-date': schemas.string().nullable().optional(),
+  'locale': schemas.string().nullable().optional().default(null),
+  'type': schemas.string().nullable().optional().default(null),
+  'primary': schemas.boolean().nullable().optional().default(null),
+  'begin-date': schemas.string().nullable().optional().default(null),
+  'end-date': schemas.string().nullable().optional().default(null),
 }).strip()
 
 // INTERFACE
@@ -42,8 +42,8 @@ export const TagSchema = schemas.object<Tag>({
 
 // INTERFACE
 export const TextRepresentationSchema = schemas.object<TextRepresentation>({
-  'language': schemas.string().nullable().optional(),
-  'script': schemas.string().nullable().optional(),
+  'language': schemas.string().nullable().optional().default(null),
+  'script': schemas.string().nullable().optional().default(null),
 }).strip()
 
 // INTERFACE
@@ -54,6 +54,6 @@ export const LabelSchema = schemas.object<Label>({
 
 // INTERFACE
 export const LabelInfoSchema = schemas.object<LabelInfo>({
-  'label': LabelSchema.nullable().optional(),
-  'catalog-number': schemas.string().nullable().optional(),
+  'label': LabelSchema.nullable().optional().default(null),
+  'catalog-number': schemas.string().nullable().optional().default(null),
 }).strip()
