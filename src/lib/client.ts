@@ -18,4 +18,13 @@ export class ApiClient {
     })
   }
 
+  // METHOD
+  public static async lookup(entity: Entity, mbid: string): Promise<unknown> {
+    const URL = `${this.BASE_URL}/${entity}/${mbid}`
+    return await Throttler.throttle(async () => {
+      const response = await axios.get(URL, { params: { fmt: 'json' } })
+      return response.data as unknown
+    })
+  }
+
 }
