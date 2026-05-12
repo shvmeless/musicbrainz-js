@@ -7,8 +7,8 @@ export type { Artist, ReleaseGroup, Release, Recording, Work } from '@interfaces
 // SCHEMAS
 export { AliasTypeSchema, ArtistTypeSchema, ArtistGenderSchema, AreaTypeSchema, StatusSchema, PrimaryTypeSchema, SecondaryTypeSchema } from '@schemas/enums'
 export { LifeSpanSchema, AreaSchema, AliasSchema, TagSchema, TextRepresentationSchema, LabelSchema, LabelInfoSchema } from '@schemas/common'
-export { ArtistSlimSchema, ReleaseGroupSlimSchema, ReleaseSlimSchema, ArtistCreditSchema, ReleaseEventSchema, ReleaseMediaSchema, TrackSchema, RecordingReleaseMediaSchema, RecordingReleaseGroupSchema, RecordingReleaseSchema } from '@schemas/secondary'
-export { ArtistSchema, ReleaseGroupSchema, ReleaseSchema, RecordingSchema } from '@schemas/entities'
+export { ArtistSlimSchema, ReleaseGroupSlimSchema, ReleaseSlimSchema, ArtistCreditSchema, ReleaseEventSchema, ReleaseMediaSchema, TrackSchema, RecordingReleaseMediaSchema, RecordingReleaseGroupSchema, RecordingReleaseSchema, WorkRelationSchema, WorkRecordingSchema } from '@schemas/secondary'
+export { ArtistSchema, ReleaseGroupSchema, ReleaseSchema, RecordingSchema, WorkSchema } from '@schemas/entities'
 
 // RAW-SEARCH
 export { type RawArtistSearch, searchRawArtist } from '@requests/artist/raw-search'

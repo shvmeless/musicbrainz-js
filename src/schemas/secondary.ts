@@ -2,7 +2,7 @@
 
 // IMPORTS
 import { schemas } from '@shvmeless/schemas'
-import type { ArtistCredit, ArtistSlim, RecordingRelease, RecordingReleaseGroup, RecordingReleaseMedia, ReleaseEvent, ReleaseGroupSlim, ReleaseMedia, ReleaseSlim, Track } from '@interfaces/secondary'
+import type { ArtistCredit, ArtistSlim, RecordingRelease, RecordingReleaseGroup, RecordingReleaseMedia, ReleaseEvent, ReleaseGroupSlim, ReleaseMedia, ReleaseSlim, Track, WorkRecording, WorkRelation } from '@interfaces/secondary'
 import { PrimaryTypeSchema, SecondaryTypeSchema, StatusSchema } from '@schemas/enums'
 import { AliasSchema } from '@schemas/common'
 
@@ -101,4 +101,20 @@ export const RecordingReleaseSchema = schemas.object<RecordingRelease>({
   'artist-credit-id': schemas.string().optional(),
   'artist-credit': schemas.array(ArtistCreditSchema).optional(),
   'disambiguation': schemas.string().optional(),
+}).strip()
+
+// INTERFACE
+export const WorkRecordingSchema = schemas.object<WorkRecording>({
+  'id': schemas.string(),
+  'title': schemas.string(),
+  'video': schemas.boolean().nullable(),
+}).strip()
+
+// INTERFACE
+export const WorkRelationSchema = schemas.object<WorkRelation>({
+  'type': schemas.string(),
+  'type-id': schemas.string(),
+  'direction': schemas.string(),
+  'artist': ArtistSlimSchema.optional(),
+  'recording': WorkRecordingSchema.optional(),
 }).strip()
