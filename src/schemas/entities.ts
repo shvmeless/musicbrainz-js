@@ -2,9 +2,10 @@
 
 // IMPORTS
 import { schemas } from '@shvmeless/schemas'
-import type { Artist } from '@interfaces/entities'
-import { ArtistGenderSchema, ArtistTypeSchema } from '@schemas/enums'
+import type { Artist, ReleaseGroup } from '@interfaces/entities'
+import { ArtistGenderSchema, ArtistTypeSchema, PrimaryTypeSchema, SecondaryTypeSchema } from '@schemas/enums'
 import { AliasSchema, AreaSchema, LifeSpanSchema, TagSchema } from '@schemas/common'
+import { ArtistCreditSchema, ReleaseSlimSchema } from '@schemas/secondary'
 
 // INTERFACE
 export const ArtistSchema = schemas.object<Artist> ({
@@ -26,4 +27,22 @@ export const ArtistSchema = schemas.object<Artist> ({
   'tags': schemas.array(TagSchema).optional(),
   'end-area': AreaSchema.optional(),
   'disambiguation': schemas.string().optional(),
+}).strip()
+
+// INTERFACE
+export const ReleaseGroupSchema = schemas.object<ReleaseGroup> ({
+  'id': schemas.string(),
+  'type-id': schemas.string().optional(),
+  'score': schemas.number(),
+  'primary-type-id': schemas.string().optional(),
+  'artist-credit-id': schemas.string(),
+  'count': schemas.number(),
+  'title': schemas.string(),
+  'first-release-date': schemas.string().optional(),
+  'primary-type': PrimaryTypeSchema.optional(),
+  'artist-credit': schemas.array(ArtistCreditSchema),
+  'releases': schemas.array(ReleaseSlimSchema).optional(),
+  'tags': schemas.array(TagSchema).optional(),
+  'secondary-types': schemas.array(SecondaryTypeSchema).optional(),
+  'secondary-type-ids': schemas.array(schemas.string()).optional(),
 }).strip()

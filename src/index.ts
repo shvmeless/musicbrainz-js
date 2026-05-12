@@ -6,8 +6,9 @@ export type { Artist, ReleaseGroup } from '@interfaces/entities'
 
 // SCHEMAS
 export { LifeSpanSchema, AreaSchema, AliasSchema, TagSchema } from '@schemas/common'
-export { AliasTypeSchema, ArtistTypeSchema, ArtistGenderSchema, AreaTypeSchema } from '@schemas/enums'
-export { ArtistSchema } from '@schemas/entities'
+export { ArtistSlimSchema, ReleaseSlimSchema, ArtistCreditSchema } from '@schemas/secondary'
+export { AliasTypeSchema, ArtistTypeSchema, ArtistGenderSchema, AreaTypeSchema, StatusSchema, PrimaryTypeSchema, SecondaryTypeSchema } from '@schemas/enums'
+export { ArtistSchema, ReleaseGroupSchema } from '@schemas/entities'
 
 // RAW-SEARCH
 export { type RawArtistSearch, searchRawArtist } from '@requests/artist/raw-search'
