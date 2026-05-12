@@ -18,3 +18,4 @@ export { lookupRawWork } from '@requests/work/raw-lookup'
 // RAW-BROWSE
 export { type RawArtistBrowse, browseRawArtist } from '@requests/artist/raw-browse'
 export { type RawReleaseGroupBrowse, browseRawReleaseGroup } from '@requests/release-group/raw-browse'
+export { type RawReleaseBrowse, browseRawRelease } from '@requests/release/raw-browse'
