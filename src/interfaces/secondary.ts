@@ -52,3 +52,51 @@ export interface ReleaseMedia {
   'disc-count': number
   'track-count': number
 }
+
+// INTERFACE
+export interface Track {
+  'id': string
+  'number': string
+  'title': string
+  'length'?: number
+}
+
+// INTERFACE
+export interface RecordingReleaseMedia {
+  'id': string
+  'position': number
+  'format'?: string
+  'track': Array<Track>
+  'track-count': number
+  'track-offset': number
+}
+
+// INTERFACE
+export interface RecordingReleaseGroup {
+  'id': string
+  'type-id'?: string
+  'primary-type-id'?: string
+  'title': string
+  'primary-type'?: PrimaryType
+  'secondary-types'?: Array<SecondaryType>
+  'secondary-type-ids'?: Array<string>
+  'disambiguation'?: string
+}
+
+// INTERFACE
+export interface RecordingRelease {
+  'id': string
+  'status-id'?: string
+  'count': number
+  'title': string
+  'status'?: Status
+  'release-group': RecordingReleaseGroup
+  'date'?: string
+  'country'?: string
+  'release-events'?: Array<ReleaseEvent>
+  'track-count': number
+  'media': Array<RecordingReleaseMedia>
+  'artist-credit-id'?: string
+  'artist-credit'?: Array<ArtistCredit>
+  'disambiguation'?: string
+}

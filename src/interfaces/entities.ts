@@ -3,7 +3,7 @@
 // IMPORTS
 import type { ArtistGender, ArtistType, PrimaryType, SecondaryType, Status } from '@interfaces/enums'
 import type { Alias, Area, LabelInfo, LifeSpan, Tag, TextRepresentation } from '@interfaces/common'
-import type { ArtistCredit, ReleaseMedia, ReleaseEvent, ReleaseGroupSlim, ReleaseSlim } from '@interfaces/secondary'
+import type { ArtistCredit, ReleaseMedia, ReleaseEvent, ReleaseGroupSlim, ReleaseSlim, RecordingRelease } from '@interfaces/secondary'
 
 // INTERFACE
 export interface Artist {
@@ -69,4 +69,20 @@ export interface Release {
   'disambiguation'?: string
   'asin'?: string
   'tags'?: Array<Tag>
+}
+
+// INTERFACE
+export interface Recording {
+  'id': string
+  'score': number
+  'artist-credit-id': string
+  'title': string
+  'length'?: number
+  'video': boolean | null
+  'artist-credit': Array<ArtistCredit>
+  'first-release-date'?: string
+  'releases'?: Array<RecordingRelease>
+  'isrcs'?: Array<string>
+  'tags'?: Array<Tag>
+  'disambiguation'?: string
 }
