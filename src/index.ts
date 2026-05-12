@@ -37,3 +37,6 @@ export { type ReleaseGroupSearch, searchReleaseGroup } from '@requests/release-g
 export { type ReleaseSearch, searchRelease } from '@requests/release/basic-search'
 export { type RecordingSearch, searchRecording } from '@requests/recording/basic-search'
 export { type WorkSearch, searchWork } from '@requests/work/basic-search'
+
+// LOOKUP
+export { lookupArtist } from '@requests/artist/basic-lookup'
