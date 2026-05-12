@@ -2,10 +2,10 @@
 
 // IMPORTS
 import { schemas } from '@shvmeless/schemas'
-import type { Artist, Release, ReleaseGroup } from '@interfaces/entities'
+import type { Artist, Recording, Release, ReleaseGroup } from '@interfaces/entities'
 import { ArtistGenderSchema, ArtistTypeSchema, PrimaryTypeSchema, SecondaryTypeSchema, StatusSchema } from '@schemas/enums'
 import { AliasSchema, AreaSchema, LabelInfoSchema, LifeSpanSchema, TagSchema, TextRepresentationSchema } from '@schemas/common'
-import { ArtistCreditSchema, ReleaseEventSchema, ReleaseGroupSlimSchema, ReleaseMediaSchema, ReleaseSlimSchema } from '@schemas/secondary'
+import { ArtistCreditSchema, RecordingReleaseSchema, ReleaseEventSchema, ReleaseGroupSlimSchema, ReleaseMediaSchema, ReleaseSlimSchema } from '@schemas/secondary'
 
 // INTERFACE
 export const ArtistSchema = schemas.object<Artist> ({
@@ -71,4 +71,20 @@ export const ReleaseSchema = schemas.object<Release> ({
   'disambiguation': schemas.string().optional(),
   'asin': schemas.string().optional(),
   'tags': schemas.array(TagSchema).optional(),
+}).strip()
+
+// INTERFACE
+export const RecordingSchema = schemas.object<Recording>({
+  'id': schemas.string(),
+  'score': schemas.number(),
+  'artist-credit-id': schemas.string(),
+  'title': schemas.string(),
+  'length': schemas.number().optional(),
+  'video': schemas.boolean().nullable(),
+  'artist-credit': schemas.array(ArtistCreditSchema),
+  'first-release-date': schemas.string().optional(),
+  'releases': schemas.array(RecordingReleaseSchema).optional(),
+  'isrcs': schemas.array(schemas.string()).optional(),
+  'tags': schemas.array(TagSchema).optional(),
+  'disambiguation': schemas.string().optional(),
 }).strip()
