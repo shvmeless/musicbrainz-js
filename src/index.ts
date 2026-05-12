@@ -44,3 +44,6 @@ export { lookupReleaseGroup } from '@requests/release-group/basic-lookup'
 export { lookupRelease } from '@requests/release/basic-lookup'
 export { lookupRecording } from '@requests/recording/basic-lookup'
 export { lookupWork } from '@requests/work/basic-lookup'
+
+// BROWSE
+export { type ArtistBrowse, browseArtist } from '@requests/artist/basic-browse'
