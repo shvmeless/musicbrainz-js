@@ -27,4 +27,13 @@ export class ApiClient {
     })
   }
 
+  // METHOD
+  public static async browse(entity: Entity, link: Entity, mbid: string, limit: number = 25, offset: number = 0): Promise<unknown> {
+    const URL = `${this.BASE_URL}/${entity}?${link}=${mbid}`
+    return await Throttler.throttle(async () => {
+      const response = await axios.get(URL, { params: { limit, offset, fmt: 'json' } })
+      return response.data as unknown
+    })
+  }
+
 }
