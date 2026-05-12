@@ -3,6 +3,11 @@ export type { Entity, LifeSpan, Area, Alias, Tag } from '@interfaces/common'
 export type { AliasType, ArtistType, ArtistGender, AreaType } from '@interfaces/enums'
 export type { Artist } from '@interfaces/entities'
 
+// SCHEMAS
+export { LifeSpanSchema, AreaSchema, AliasSchema, TagSchema } from '@schemas/common'
+export { AliasTypeSchema, ArtistTypeSchema, ArtistGenderSchema, AreaTypeSchema } from '@schemas/enums'
+export { ArtistSchema } from '@schemas/entities'
+
 // RAW-SEARCH
 export { type RawArtistSearch, searchRawArtist } from '@requests/artist/raw-search'
 export { type RawReleaseGroupSearch, searchRawReleaseGroup } from '@requests/release-group/raw-search'
