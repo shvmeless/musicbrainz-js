@@ -2,10 +2,10 @@
 
 // IMPORTS
 import { schemas } from '@shvmeless/schemas'
-import type { Artist, ReleaseGroup } from '@interfaces/entities'
-import { ArtistGenderSchema, ArtistTypeSchema, PrimaryTypeSchema, SecondaryTypeSchema } from '@schemas/enums'
-import { AliasSchema, AreaSchema, LifeSpanSchema, TagSchema } from '@schemas/common'
-import { ArtistCreditSchema, ReleaseSlimSchema } from '@schemas/secondary'
+import type { Artist, Release, ReleaseGroup } from '@interfaces/entities'
+import { ArtistGenderSchema, ArtistTypeSchema, PrimaryTypeSchema, SecondaryTypeSchema, StatusSchema } from '@schemas/enums'
+import { AliasSchema, AreaSchema, LabelInfoSchema, LifeSpanSchema, TagSchema, TextRepresentationSchema } from '@schemas/common'
+import { ArtistCreditSchema, ReleaseEventSchema, ReleaseGroupSlimSchema, ReleaseMediaSchema, ReleaseSlimSchema } from '@schemas/secondary'
 
 // INTERFACE
 export const ArtistSchema = schemas.object<Artist> ({
@@ -45,4 +45,30 @@ export const ReleaseGroupSchema = schemas.object<ReleaseGroup> ({
   'tags': schemas.array(TagSchema).optional(),
   'secondary-types': schemas.array(SecondaryTypeSchema).optional(),
   'secondary-type-ids': schemas.array(schemas.string()).optional(),
+}).strip()
+
+// INTERFACE
+export const ReleaseSchema = schemas.object<Release> ({
+  'id': schemas.string(),
+  'score': schemas.number(),
+  'status-id': schemas.string().optional(),
+  'packaging-id': schemas.string().optional(),
+  'artist-credit-id': schemas.string(),
+  'count': schemas.number().optional(),
+  'title': schemas.string(),
+  'status': StatusSchema.optional(),
+  'packaging': schemas.string().optional(),
+  'text-representation': TextRepresentationSchema.optional(),
+  'artist-credit': schemas.array(ArtistCreditSchema),
+  'release-group': ReleaseGroupSlimSchema,
+  'date': schemas.string().optional(),
+  'country': schemas.string().optional(),
+  'release-events': schemas.array(ReleaseEventSchema).optional(),
+  'barcode': schemas.string().optional(),
+  'label-info': schemas.array(LabelInfoSchema).optional(),
+  'track-count': schemas.number().optional(),
+  'media': schemas.array(ReleaseMediaSchema).optional(),
+  'disambiguation': schemas.string().optional(),
+  'asin': schemas.string().optional(),
+  'tags': schemas.array(TagSchema).optional(),
 }).strip()

@@ -2,7 +2,7 @@
 
 // IMPORTS
 import { schemas } from '@shvmeless/schemas'
-import type { Alias, Area, LifeSpan, Tag } from '@interfaces/common'
+import type { Alias, Area, Label, LabelInfo, LifeSpan, Tag, TextRepresentation } from '@interfaces/common'
 import { AliasTypeSchema, AreaTypeSchema } from '@schemas/enums'
 
 // INTERFACE
@@ -38,4 +38,22 @@ export const AliasSchema = schemas.object<Alias>({
 export const TagSchema = schemas.object<Tag>({
   'count': schemas.number(),
   'name': schemas.string(),
+}).strip()
+
+// INTERFACE
+export const TextRepresentationSchema = schemas.object<TextRepresentation>({
+  'language': schemas.string().optional(),
+  'script': schemas.string().optional(),
+}).strip()
+
+// INTERFACE
+export const LabelSchema = schemas.object<Label> ({
+  'id': schemas.string(),
+  'name': schemas.string(),
+}).strip()
+
+// INTERFACE
+export const LabelInfoSchema = schemas.object<LabelInfo> ({
+  'label': LabelSchema.optional(),
+  'catalog-number': schemas.string().optional(),
 }).strip()
